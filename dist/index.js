@@ -463,7 +463,7 @@ export default class VideoPlayer extends React.Component {
         </Text>
       </View>);
         return (<TouchableWithoutFeedback onPress={() => this.toggleControls()}>
-        <View style={{ backgroundColor: 'black' }}>
+        <View style={{ backgroundColor: 'white' }}>
           <Video source={source} ref={component => {
             this.playbackInstance = component;
             ref && ref(component);
