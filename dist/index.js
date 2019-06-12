@@ -274,7 +274,8 @@ export default class VideoPlayer extends React.Component {
                 playsInSilentModeIOS: true,
                 shouldDuckAndroid: true,
                 interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-                playThroughEarpieceAndroid: false
+                playThroughEarpieceAndroid: false,
+                staysActiveInBackground: false,
             });
         }
         catch (e) {
