@@ -365,8 +365,9 @@ export default class VideoPlayer extends React.Component {
         if (this.playbackInstance !== null &&
             this.state.playbackInstancePosition !== null &&
             this.state.playbackInstanceDuration !== null) {
-            return (this.state.playbackInstancePosition /
-                this.state.playbackInstanceDuration);
+            let sliderValue = (this.state.playbackInstancePosition / this.state.playbackInstanceDuration);
+            if (sliderValue.isNaN()) return 0
+            else return sliderValue;
         }
         return 0;
     }
