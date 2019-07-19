@@ -205,6 +205,7 @@ export default class VideoPlayer extends React.Component<Props, State> {
         shouldDuckAndroid: true,
         interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
         playThroughEarpieceAndroid: false,
+        // @ts-ignore
         staysActiveInBackground: false,
       })
     } catch (e) {
@@ -668,8 +669,10 @@ export default class VideoPlayer extends React.Component<Props, State> {
           style={{backgroundColor: 'black'}}>
           <Video
             source={source}
+            // @ts-ignore  
             ref={component => {
               this.playbackInstance = component
+              // @ts-ignore  
               ref && ref(component)
             }}
             onPlaybackStatusUpdate={(status: PlaybackStatus) => this.playbackCallback(status)}
@@ -714,6 +717,7 @@ export default class VideoPlayer extends React.Component<Props, State> {
                   ? 'none'
                   : 'auto'
               }
+              // @ts-ignore
               style={{
                 opacity: this.state.controlsOpacity,
               }}>

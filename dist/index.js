@@ -275,6 +275,7 @@ export default class VideoPlayer extends React.Component {
                 shouldDuckAndroid: true,
                 interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
                 playThroughEarpieceAndroid: false,
+                // @ts-ignore
                 staysActiveInBackground: false,
             });
         }
@@ -365,9 +366,8 @@ export default class VideoPlayer extends React.Component {
         if (this.playbackInstance !== null &&
             this.state.playbackInstancePosition !== null &&
             this.state.playbackInstanceDuration !== null) {
-            let sliderValue = (this.state.playbackInstancePosition / this.state.playbackInstanceDuration);
-            if (isNaN(sliderValue)) return 0
-            else return sliderValue;
+            return (this.state.playbackInstancePosition /
+                this.state.playbackInstanceDuration);
         }
         return 0;
     }
@@ -465,9 +465,12 @@ export default class VideoPlayer extends React.Component {
         </Text>
       </View>);
         return (<TouchableWithoutFeedback onPress={() => this.toggleControls()}>
-        <View style={{ backgroundColor: 'white' }}>
-          <Video source={source} ref={component => {
+        <View style={{ backgroundColor: 'black' }}>
+          <Video source={source} 
+        // @ts-ignore  
+        ref={component => {
             this.playbackInstance = component;
+            // @ts-ignore  
             ref && ref(component);
         }} onPlaybackStatusUpdate={(status) => this.playbackCallback(status)} style={{
             width: videoWidth,
@@ -500,7 +503,9 @@ export default class VideoPlayer extends React.Component {
             (this.state.playbackState === PlaybackStates.Playing ||
                 this.state.playbackState === PlaybackStates.Paused) && (<CenteredView pointerEvents={this.state.controlsState === ControlStates.Hidden
             ? 'none'
-            : 'auto'} style={{
+            : 'auto'} 
+        // @ts-ignore
+        style={{
             opacity: this.state.controlsOpacity,
         }}>
               <Control center={true} callback={() => this.togglePlay()}>

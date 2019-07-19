@@ -12,6 +12,6 @@ const style = StyleSheet.create({
 export const PlayIcon = () => <MaterialIcons name="play-arrow" size={CENTER_ICON_SIZE} color={ICON_COLOR} style={style.iconStyle}/>;
 export const PauseIcon = () => <MaterialIcons name="pause" size={CENTER_ICON_SIZE} color={ICON_COLOR} style={style.iconStyle}/>;
 export const Spinner = () => <ActivityIndicator color={ICON_COLOR} size="large"/>;
-export const FullscreenEnterIcon = () => <MaterialIcons name="fullscreen" size={BOTTOM_BAR_ICON_SIZE} color={'#000000'} style={style.iconStyle}/>;
-export const FullscreenExitIcon = () => <MaterialIcons name="fullscreen-exit" size={BOTTOM_BAR_ICON_SIZE} color={'#000000'} style={style.iconStyle}/>;
+export const FullscreenEnterIcon = () => <MaterialIcons name="fullscreen" size={BOTTOM_BAR_ICON_SIZE} color={ICON_COLOR} style={style.iconStyle}/>;
+export const FullscreenExitIcon = () => <MaterialIcons name="fullscreen-exit" size={BOTTOM_BAR_ICON_SIZE} color={ICON_COLOR} style={style.iconStyle}/>;
 export const ReplayIcon = () => <MaterialIcons name="replay" size={CENTER_ICON_SIZE} color={ICON_COLOR} style={style.iconStyle}/>;
